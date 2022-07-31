@@ -1,9 +1,9 @@
 docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes 
 
 
-docker-compose up -d --build
+docker-compose up -d 
 
-docker exec -it blogs_api bash
+docker exec -it trybesmith bash
 
 
 
