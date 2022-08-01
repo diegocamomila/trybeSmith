@@ -1,5 +1,5 @@
-import { ICreateProduct } from '../interfaces/product.interface';
-import CreateProductModel from '../models/CreateProductModel';
+import { ICreateProduct } from '../../interfaces/product.interface';
+import CreateProductModel from '../../models/product/CreateProductModel';
 
 export default async ({ name, amount }:ICreateProduct) => {
   const newProduct = await CreateProductModel({ name, amount });

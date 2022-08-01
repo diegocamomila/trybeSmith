@@ -1,4 +1,4 @@
-import AllProductModel from '../models/AllProductModel';
+import AllProductModel from '../../models/product/AllProductModel';
 
 export default async () => {
   const allProduct = await AllProductModel();

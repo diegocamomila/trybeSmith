@@ -1,6 +1,6 @@
 import { RowDataPacket } from 'mysql2';
-import { ICreateProduct } from '../interfaces/product.interface';
-import connection from './connection';
+import { ICreateProduct } from '../../interfaces/product.interface';
+import connection from '../connection';
 
 export default async (): Promise<ICreateProduct[]> => {
   const query = 'SELECT id, name, amount, orderId FROM Trybesmith.Products';

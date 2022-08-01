@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { ICreateProduct } from '../interfaces/product.interface';
-import CreateProductServece from '../services/CreateProductService';
+import { ICreateProduct } from '../../interfaces/product.interface';
+import CreateProductServece from '../../services/product/CreateProductService';
 
 export default async (req: Request, res: Response) => {
   const product = req.body as ICreateProduct;
