@@ -7,6 +7,6 @@ export default async ({ username, classe, level, password }: IUser) => {
   // console.log(newUser);
   const result = { id: newUser.id, username: newUser.username, password: newUser.password };
   const token = NewToken(result);
-
+  console.log(token);
   return token;
 };

@@ -6,11 +6,11 @@ ErrorRequestHandler = async (err, _req: Request, res: Response, next: NextFuncti
   console.log(`name: ${name}`);
 
   switch (name) {
-    case 'ValidationError':
+    case 'BadRequest':
       res.status(400).json({ message });
       break;
-    case 'NotFoundError':
-      res.status(404).json({ message });
+    case 'Unprocessable':
+      res.status(422).json({ message });
       break;
     case 'Unauthorized':
       res.status(401).json({ message });
@@ -21,4 +21,14 @@ ErrorRequestHandler = async (err, _req: Request, res: Response, next: NextFuncti
   next();
 };
 
-export default errorHandler;
+export const throwError = (name: string, message: string): void => {
+  const e = new Error('Expired or invalid token');
+  e.name = name;
+  e.message = message;
+  throw e;
+};
+
+export default {
+  errorHandler,
+  throwError,
+};

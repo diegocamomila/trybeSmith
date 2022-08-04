@@ -1,6 +1,6 @@
 import { ResultSetHeader } from 'mysql2';
-import connection from '../connection';
 import { IUser } from '../../interfaces/user.interface';
+import connection from '../connection';
 
 export default async (user: IUser): Promise<IUser> => {
   const { username, classe, level, password } = user;
@@ -9,6 +9,6 @@ export default async (user: IUser): Promise<IUser> => {
   const [result] = await connection
     .execute<ResultSetHeader>(query, [classe, level, username, password]);
   const newUser = { id: result.insertId, username, classe, level, password };
-  console.log(newUser);
+  // console.log(newUser);
   return newUser;
 };
